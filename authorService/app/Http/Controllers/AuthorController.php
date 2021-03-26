@@ -34,7 +34,7 @@ class AuthorController extends Controller
     }
 
     /**
-     * Create new one of authors.
+     * Create new one of author.
      *
      * @return Illuminate\Http\Response
      */
@@ -55,7 +55,7 @@ class AuthorController extends Controller
     }
 
     /**
-     * Obtains and show one of authors.
+     * Obtains and show one of author.
      *
      * @return Illuminate\Http\Response
      */

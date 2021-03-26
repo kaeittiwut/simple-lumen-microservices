@@ -14,17 +14,17 @@
  */
 
 $router->get('/', function () use ($router) {
-    return config('app.name');;
+    return config('app.name');
 });
 
-$router->get('/authors', 'AuthorController@index');
+$router->get('/books', 'BookController@index');
 
-$router->post('/authors', 'AuthorController@store');
+$router->post('/books', 'BookController@store');
 
-$router->get('/authors/{id}', 'AuthorController@show');
+$router->get('/books/{id}', 'BookController@show');
 
-$router->put('/authors/{id}', 'AuthorController@update');
+$router->put('/books/{id}', 'BookController@update');
 
-$router->patch('/authors/{id}', 'AuthorController@update');
+$router->patch('/books/{id}', 'BookController@update');
 
-$router->delete('/authors/{id}', 'AuthorController@destroy');
+$router->delete('/books/{id}', 'BookController@destroy');
