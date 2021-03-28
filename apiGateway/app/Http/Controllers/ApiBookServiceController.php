@@ -54,6 +54,7 @@ class ApiBookServiceController extends Controller
     public function store(Request $request)
     {
         $this->apiAuthorService->showAuthor($request->author_id);
+
         return $this->successResponse($this->apiBookService->
                 createBook($request->all(), Response::HTTP_CREATED));
     }
