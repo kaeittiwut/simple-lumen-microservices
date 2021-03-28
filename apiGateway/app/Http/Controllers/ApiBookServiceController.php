@@ -34,7 +34,7 @@ class ApiBookServiceController extends Controller
      */
     public function index()
     {
-
+        return $this->successResponse($this->apiBookService->obtainBooks());
     }
 
     /**
@@ -44,7 +44,8 @@ class ApiBookServiceController extends Controller
      */
     public function store(Request $request)
     {
-
+        return $this->successResponse($this->apiBookService->
+                createBook($request->all(), Response::HTTP_CREATED));
     }
 
     /**
@@ -54,7 +55,7 @@ class ApiBookServiceController extends Controller
      */
     public function show($id)
     {
-
+        return $this->successResponse($this->apiBookService->showBook($id));
     }
 
     /**
@@ -64,7 +65,7 @@ class ApiBookServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        return $this->successResponse($this->apiBookService->editBook($request->all(), $id));
     }
 
     /**
@@ -74,6 +75,6 @@ class ApiBookServiceController extends Controller
      */
     public function destroy($id)
     {
-
+        return $this->successResponse($this->apiBookService->deleteBook($id));
     }
 }

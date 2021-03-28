@@ -35,7 +35,7 @@ class ApiAuthorServiceController extends Controller
      */
     public function index()
     {
-
+        return $this->successResponse($this->apiAuthorService->obtainAuthors());
     }
 
     /**
@@ -45,7 +45,8 @@ class ApiAuthorServiceController extends Controller
      */
     public function store(Request $request)
     {
-
+        return $this->successResponse($this->apiAuthorService->
+                createAuthor($request->all(), Response::HTTP_CREATED));
     }
 
     /**
@@ -55,7 +56,7 @@ class ApiAuthorServiceController extends Controller
      */
     public function show($id)
     {
-
+        return $this->successResponse($this->apiAuthorService->showAuthor($id));
     }
 
     /**
@@ -65,7 +66,7 @@ class ApiAuthorServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        return $this->successResponse($this->apiAuthorService->editAuthor($request->all(), $id));
     }
 
     /**
@@ -75,6 +76,6 @@ class ApiAuthorServiceController extends Controller
      */
     public function destroy($id)
     {
-
+        return $this->successResponse($this->apiAuthorService->deleteAuthor($id));
     }
 }

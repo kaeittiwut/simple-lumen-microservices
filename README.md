@@ -20,7 +20,7 @@ $ php artisan migrate --seed
 $ php -S localhost:8000 -t public
 ```
 
-**Author service:**
+**Author Service:**
 
 ```bash
 $ cd authorService
@@ -32,7 +32,7 @@ $ php artisan migrate --seed
 $ php -S localhost:8001 -t public
 ```
 
-**Book service:**
+**Book Service:**
 
 ```bash
 $ cd bookService
@@ -44,7 +44,7 @@ $ php artisan migrate --seed
 $ php -S localhost:8002 -t public
 ```
 
-**Note: You can change port number as you like, But don't forget to change that port on the env file.**
+- **_Note: You can change port number as you like, But don't forget to change that port on the env file._**
 
 ## Migrate your database
 

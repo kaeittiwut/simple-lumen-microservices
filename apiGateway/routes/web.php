@@ -18,17 +18,17 @@ $router->get('/', function () use ($router) {
 });
 
 /* Routes for Author service */
-$router->get('/authors', 'ApiAuthorController@index');
-$router->post('/authors', 'ApiAuthorController@store');
-$router->get('/authors/{id}', 'ApiAuthorController@show');
-$router->put('/authors/{id}', 'ApiAuthorController@update');
-$router->patch('/authors/{id}', 'ApiAuthorController@update');
-$router->delete('/authors/{id}', 'ApiAuthorController@destroy');
+$router->get('/authors', 'ApiAuthorServiceController@index');
+$router->post('/authors', 'ApiAuthorServiceController@store');
+$router->get('/authors/{id}', 'ApiAuthorServiceController@show');
+$router->put('/authors/{id}', 'ApiAuthorServiceController@update');
+$router->patch('/authors/{id}', 'ApiAuthorServiceController@update');
+$router->delete('/authors/{id}', 'ApiAuthorServiceController@destroy');
 
 /* Routes for Book service */
-$router->get('/books', 'ApiBookController@index');
-$router->post('/books', 'ApiBookController@store');
-$router->get('/books/{id}', 'ApiBookController@show');
-$router->put('/books/{id}', 'ApiBookController@update');
-$router->patch('/books/{id}', 'ApiBookController@update');
-$router->delete('/books/{id}', 'ApiBookController@destroy');
+$router->get('/books', 'ApiBookServiceController@index');
+$router->post('/books', 'ApiBookServiceController@store');
+$router->get('/books/{id}', 'ApiBookServiceController@show');
+$router->put('/books/{id}', 'ApiBookServiceController@update');
+$router->patch('/books/{id}', 'ApiBookServiceController@update');
+$router->delete('/books/{id}', 'ApiBookServiceController@destroy');
