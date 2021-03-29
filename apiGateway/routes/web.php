@@ -17,18 +17,21 @@ $router->get('/', function () use ($router) {
     return config('app.name');
 });
 
-/* Routes for Author service */
-$router->get('/authors', 'ApiAuthorServiceController@index');
-$router->post('/authors', 'ApiAuthorServiceController@store');
-$router->get('/authors/{id}', 'ApiAuthorServiceController@show');
-$router->put('/authors/{id}', 'ApiAuthorServiceController@update');
-$router->patch('/authors/{id}', 'ApiAuthorServiceController@update');
-$router->delete('/authors/{id}', 'ApiAuthorServiceController@destroy');
+$router->group(['middleware' => 'client.credentials'], function () use ($router) {
 
-/* Routes for Book service */
-$router->get('/books', 'ApiBookServiceController@index');
-$router->post('/books', 'ApiBookServiceController@store');
-$router->get('/books/{id}', 'ApiBookServiceController@show');
-$router->put('/books/{id}', 'ApiBookServiceController@update');
-$router->patch('/books/{id}', 'ApiBookServiceController@update');
-$router->delete('/books/{id}', 'ApiBookServiceController@destroy');
+    /* Routes for Author service */
+    $router->get('/authors', 'ApiAuthorServiceController@index');
+    $router->post('/authors', 'ApiAuthorServiceController@store');
+    $router->get('/authors/{id}', 'ApiAuthorServiceController@show');
+    $router->put('/authors/{id}', 'ApiAuthorServiceController@update');
+    $router->patch('/authors/{id}', 'ApiAuthorServiceController@update');
+    $router->delete('/authors/{id}', 'ApiAuthorServiceController@destroy');
+
+    /* Routes for Book service */
+    $router->get('/books', 'ApiBookServiceController@index');
+    $router->post('/books', 'ApiBookServiceController@store');
+    $router->get('/books/{id}', 'ApiBookServiceController@show');
+    $router->put('/books/{id}', 'ApiBookServiceController@update');
+    $router->patch('/books/{id}', 'ApiBookServiceController@update');
+    $router->delete('/books/{id}', 'ApiBookServiceController@destroy');
+});

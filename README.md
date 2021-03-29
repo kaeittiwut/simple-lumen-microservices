@@ -17,6 +17,9 @@ $ composer install
 
 $ php artisan migrate --seed
 
+# Install encryption keys and other necessary stuff for Passport
+$ php artisan passport:install
+
 $ php -S localhost:8000 -t public
 ```
 
@@ -80,6 +83,10 @@ Laravel Lumen is a stunningly fast PHP micro-framework for building web applicat
 ## Official Documentation
 
 Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+
+## Lumen-Passport Documentation
+
+Documentation for Making Laravel Passport work with Lumen. [Lumen-Passport Github](https://github.com/dusterio/lumen-passport).
 
 ## Contributing
 
