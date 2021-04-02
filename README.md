@@ -23,13 +23,15 @@ $ php artisan passport:install
 $ php -S localhost:8000 -t public
 ```
 
-**Managing Clients**
+**Managing Clients:**
 
-The simplest way to create a client is using the passport:client Artisan command. After this we will have the **_Client Secret_** for further use.
+The simplest way to create a client is using the passport:client Artisan command.
 
 ```bash
 $ php artisan passport:client
 ```
+
+After this we will have the **_Client Secret_** for further use.
 
 **Author Service:**
 
@@ -57,23 +59,41 @@ $ php -S localhost:8002 -t public
 
 - **_Note: You can change port number as you like, But don't forget to change that port on the env file._**
 
-## Migrate your database
-
-```bash
-$ php artisan migrate --seed
-```
-
 ## Seed Your database with Faker
 
 Faker is a utility which generates random fake data. So, you can generate a seeder in each microservice by using this command:
 
 ```bash
-$ cd authorService
-
 $ php artisan db:seed
 ```
 
-**Note: If you want to drop all table before seeding, you can use this command.**
+## Running Migrations
+
+Run all of your outstanding migrations with seeder:
+
+```bash
+$ php artisan migrate --seed
+```
+
+If you would like to see which migrations have run thus far:
+
+```bash
+$ php artisan migrate:status
+```
+
+Roll back the latest migration operation. This command will rolls back the last "batch" of migrations, which may include multiple migration files:
+
+```bash
+$ php artisan migrate:rollback
+```
+
+Roll back all of your application's migrations:
+
+```bash
+$ php artisan migrate:reset
+```
+
+If you want to drop all table before seeding, you can use this command.
 
 ```bash
 $ php artisan migrate:fresh --seed
