@@ -1,6 +1,6 @@
 # Simple Lumen Microservices
 
-This project was developed when I learned the microservice architecture that builds services and APIs with Lumen by Laravel. And build a complete set of PHP microservices, APIs and its security layers using Lumen Passport (OAuth2).
+This project was developed when I learned the microservice architecture that builds services and APIs with Lumen by instructor JuanD MeGon. And build a complete set of PHP microservices, APIs and its security layers using [Lumen Passport](https://github.com/dusterio/lumen-passport) (OAuth2).
 
 ## Serving your application
 
@@ -21,6 +21,14 @@ $ php artisan migrate --seed
 $ php artisan passport:install
 
 $ php -S localhost:8000 -t public
+```
+
+**Managing Clients**
+
+The simplest way to create a client is using the passport:client Artisan command. After this we will have the **_Client Secret_** for further use.
+
+```bash
+$ php artisan passport:client
 ```
 
 **Author Service:**
