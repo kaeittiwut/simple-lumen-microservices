@@ -93,7 +93,7 @@ Roll back all of your application's migrations:
 $ php artisan migrate:reset
 ```
 
-If you want to drop all table before seeding, you can use this command.
+If you want to drop all table before seeding, you can use this command:
 
 ```bash
 $ php artisan migrate:fresh --seed

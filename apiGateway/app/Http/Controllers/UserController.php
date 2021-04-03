@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -41,7 +42,7 @@ class UserController extends Controller
     {
         $rules = [
             'name' => 'required|max:255',
-            'email' => 'required|email|unique:user,email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8|confirmed',
         ];
 
@@ -77,7 +78,7 @@ class UserController extends Controller
         $rules = [
             'name' => 'max:255',
             // prevent fail update from the unique email rule, if that has the same data
-            'email' => 'email|unique:user,email,' . $id,
+            'email' => 'email|unique:users,email,' . $id,
             'password' => 'min:8|confirmed',
         ];
 
@@ -113,5 +114,15 @@ class UserController extends Controller
         $user->delete();
 
         return $this->validResponse($user);
+    }
+
+    /**
+     * Identify exiting user.
+     *
+     * @return Illuminate\Http\Response
+     */
+    public function me(Request $request)
+    {
+        return $this->validResponse($request->user());
     }
 }
