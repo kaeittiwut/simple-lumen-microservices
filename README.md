@@ -1,5 +1,7 @@
 # Simple Lumen Microservices
 
+<img scr="Architecture.png">
+
 This project was developed when I learned the microservice architecture that builds services and APIs with Lumen by instructor JuanD MeGon. And build a complete set of PHP microservices, APIs and its security layers using [Lumen Passport](https://github.com/dusterio/lumen-passport) (OAuth2).
 
 ## Serving your application
